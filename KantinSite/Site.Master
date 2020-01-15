@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="KantinSite.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head runat="server">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><%: Page.Title %> - My ASP.NET Uygulaması</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
+	<link rel="stylesheet" href="assets/css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="assets/css/aos.css">
+
+	<link rel="stylesheet" href="assets/css/ionicons.min.css">
+
+	<link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="assets/css/jquery.timepicker.css">
+
+	<link href="assets/css/flaticon.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/icomoon.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+
+	
+
+</head>
+<body>
+	<form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				
+				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+				<%--Framework Scripts--%>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<%--Site Scripts--%>
+			</Scripts>
+		</asp:ScriptManager>
+
+
+
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Kantin<small>V2</small></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="oi oi-menu"></span>Menu
+				</button>
+				<div class="collapse navbar-collapse" id="ftco-nav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="Default.aspx" class="nav-link">Anasayfa</a></li>
+
+						<li class="nav-item"><a href="Default.aspx" class="nav-link">İletişim</a></li>
+
+						<%
+
+							if (Session["kullaniciAdi"] == null)
+							{ %>
+
+						<li class="nav-item"><a href="giris.aspx" class="nav-link">Giriş Yap</a></li>
+
+						<%	}
+							else
+							{ %>
+
+						<li class="nav-item"><a href="#" class="nav-link"><%:Session["adiSoyadi"] %></a></li>
+
+						<% }  %>
+
+						<li class="nav-item cart"><a href="sepetim.aspx" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<asp:ContentPlaceHolder ID="MainContent" runat="server">
+		</asp:ContentPlaceHolder>
+
+		
+		<footer class="ftco-footer ftco-section img">
+			<div class="overlay"></div>
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12 text-center">
+
+						<p>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+							Tüm Hakları Saklıdır 
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.easing.1.3.js"></script>
+		<script src="assets/js/jquery.waypoints.min.js"></script>
+		<script src="assets/js/jquery.stellar.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="assets/js/aos.js"></script>
+		<script src="assets/js/jquery.animateNumber.min.js"></script>
+		<script src="assets/js/bootstrap-datepicker.js"></script>
+		<script src="assets/js/jquery.timepicker.min.js"></script>
+		<script src="assets/js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="assets/js/google-map.js"></script>
+		<script src="assets/js/main.js"></script>
+
+
+
+		
+
+	</form>
+</body>
+</html>
